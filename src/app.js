@@ -5,6 +5,7 @@ const express = require('express');
 const hbs = require('hbs');
 
 const app = express();
+const PORT = process.env.PORT || 8080
 
 const publicPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -95,7 +96,6 @@ app.get('*', (req, res) => {
 
 
 
-app.listen(8080, () => {
-	console.log('Server is up on port 8080');
-	
+app.listen(PORT, () => {
+	console.log(`Server is up on port ${PORT}`);
 })
